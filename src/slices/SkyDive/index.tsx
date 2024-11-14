@@ -15,6 +15,11 @@ export type SkyDiveProps = SliceComponentProps<Content.SkyDiveSlice>;
  * Component for "SkyDive" Slices.
  */
 const SkyDive = ({ slice }: SkyDiveProps): JSX.Element => {
+
+  // Check if slice.primary and properties exist
+  const flavor = slice?.primary?.flavor ?? "defaultFlavor";
+  const sentence = slice?.primary?.sentence ?? "Default sentence";
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
